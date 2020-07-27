@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D317BA7-AB54-4E21-A540-880ABE495F18}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ZJCToolkit</RootNamespace>
+    <AssemblyName>ZJCToolkit</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Scripts\Base\Singleton.cs" />
+    <Compile Include="Scripts\Define\EDefine.cs" />
+    <Compile Include="Scripts\Manager\UIManager.cs" />
+    <Compile Include="Scripts\Network\BaseEvent.cs" />
+    <Compile Include="Scripts\Network\CSNetwork.cs" />
+    <Compile Include="Scripts\Network\EventHandlerManager.cs" />
+    <Compile Include="Scripts\UI\UIGridContainer.cs" />
+    <Compile Include="Scripts\Utility\Excel\ExcelAccess.cs" />
+    <Compile Include="Scripts\Utility\Excel\ExcelTranslate.cs" />
+    <Compile Include="Scripts\Utility\Excel\ExcelManager.cs" />
+    <Compile Include="Scripts\Utility\Excel\ExcelCheck.cs" />
+    <Compile Include="Scripts\Utility\Excel\ExcelParse.cs" />
+    <Compile Include="Scripts\Utility\Excel\JCExcel.cs" />
+    <Compile Include="Scripts\Utility\FileUtility.cs" />
+    <Compile Include="Scripts\Utility\MiniJSON.cs" />
+    <Compile Include="Scripts\Utility\ProcessUtility.cs" />
+    <Compile Include="Scripts\Utility\SVNUtility.cs" />
+    <Compile Include="UIRootPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\UI\Base\IUIBase.cs" />
+    <Compile Include="UI\Function\Excel\temp\UIExcelTool_FileSelectItemTemp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Function\Excel\temp\UIExcelTool_FolderSelctPathTemp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Function\Excel\UIExcel_TranslateToolPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Window\UIExcelToolPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Window\UIAndroidPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Window\UIMainPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Window\UIMainTiltleBarPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus">
+      <HintPath>Plugins\Dll\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel">
+      <HintPath>Plugins\Dll\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>Plugins\Dll\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>Plugins\Dll\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>Plugins\Dll\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>Plugins\Dll\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>Plugins\Dll\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License">
+      <HintPath>Plugins\Dll\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf">
+      <HintPath>Plugins\Dll\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.XLS">
+      <HintPath>Plugins\Dll\Spire.XLS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UIRootPanel.resx">
+      <DependentUpon>UIRootPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Function\Excel\temp\UIExcelTool_FileSelectItemTemp.resx">
+      <DependentUpon>UIExcelTool_FileSelectItemTemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Function\Excel\temp\UIExcelTool_FolderSelctPathTemp.resx">
+      <DependentUpon>UIExcelTool_FolderSelctPathTemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Function\Excel\UIExcel_TranslateToolPanel.resx">
+      <DependentUpon>UIExcel_TranslateToolPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Window\UIExcelToolPanel.resx">
+      <DependentUpon>UIExcelToolPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Window\UIAndroidPanel.resx">
+      <DependentUpon>UIAndroidPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Window\UIMainPanel.resx">
+      <DependentUpon>UIMainPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Window\UIMainTiltleBarPanel.resx">
+      <DependentUpon>UIMainTiltleBarPanel.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
